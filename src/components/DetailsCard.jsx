@@ -8,14 +8,21 @@ function DetailsCard() {
   const { selected } = useContext(selectedContext);
 
   return (
-    <section className="flex items-center justify-center ">
+    <section className="flex items-center justify-center">
       {selected && (
-        <div className="space-y-5 shadow-lg rounded-md bg-white p-5">
-          <img
-            src={selected.image}
-            alt="Pokemon Image"
-            className="w-full h-[300px]"
-          />
+        <div
+          className="space-y-5 shadow-xl rounded-md bg-white p-5"
+          style={{
+            boxShadow: `0 0 20px  ${COLOR_MAP.get(selected.type)}`,
+          }}
+        >
+          <div className="flex items-center justify-center">
+            <img
+              src={selected.image}
+              alt="Pokemon Image"
+              className="w-[300px] h-[300px] "
+            />
+          </div>
           <div className="flex justify-between">
             <h3 className="font-bold capitalize text-xl">{selected.name}</h3>
             <Type type={selected.type} />

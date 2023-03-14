@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 import DetailsCard from "./components/DetailsCard";
 import List from "./components/List";
 import Pagination from "./components/Pagination";
+import Sidebar from "./components/Sidebar";
 
 function formatJson(data) {
   return {
@@ -14,7 +15,7 @@ function formatJson(data) {
     type: data.types[0].type.name,
     stats: data.stats.map((stat) => {
       return {
-        name: stat.stat.name,
+        name: stat.stat.name.replace("-", " "),
         value: stat.base_stat,
       };
     }),
@@ -51,20 +52,17 @@ function App() {
   }
 
   return (
-    <pokemonContext.Provider value={pokemons}>
+    <pokemonContext.Provider
+      value={{ pokemons, setPokemons, pagination, setUrl }}
+    >
       <selectedContext.Provider value={{ selected, setSelected }}>
-        <main className="bg-slate-100 grid grid-cols-2 min-h-screen p-5">
+        <main className="bg-slate-100 grid grid-cols-[300px_2fr_1fr] min-h-screen ">
+          <Sidebar />
           {/* list of pokemons */}
           <List loading={loading} />
 
           {/* pokemon card with info */}
           <DetailsCard />
-
-          <Pagination
-            pagination={pagination}
-            setUrl={setUrl}
-            setPokemons={setPokemons}
-          />
         </main>
       </selectedContext.Provider>
     </pokemonContext.Provider>
