@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import DetailsCard from "./components/DetailsCard";
 import List from "./components/List";
 import Pagination from "./components/Pagination";
@@ -52,20 +53,27 @@ function App() {
   }
 
   return (
-    <pokemonContext.Provider
-      value={{ pokemons, setPokemons, pagination, setUrl }}
-    >
-      <selectedContext.Provider value={{ selected, setSelected }}>
-        <main className="bg-slate-100 grid grid-cols-[300px_2fr_1fr] min-h-screen ">
-          <Sidebar />
-          {/* list of pokemons */}
-          <List loading={loading} />
+    <>
+      <pokemonContext.Provider
+        value={{ pokemons, setPokemons, pagination, setUrl }}
+      >
+        <selectedContext.Provider value={{ selected, setSelected }}>
+          <main className="bg-slate-100 grid grid-cols-[300px_2fr_1fr] min-h-screen ">
+            <Sidebar />
+            {/* list of pokemons */}
+            <List loading={loading} />
 
-          {/* pokemon card with info */}
-          <DetailsCard />
-        </main>
-      </selectedContext.Provider>
-    </pokemonContext.Provider>
+            {/* pokemon card with info */}
+            <DetailsCard />
+          </main>
+        </selectedContext.Provider>
+      </pokemonContext.Provider>
+      <Routes>
+        <Route path="/" />
+        <Route path="/types" />
+        <Route path="/abilities" />
+      </Routes>
+    </>
   );
 }
 
