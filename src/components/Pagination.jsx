@@ -14,7 +14,7 @@ function Pagination() {
   return (
     <div className="flex items-center w-[300px] h-20 justify-between text-xl bg-white shadow-lg">
       <button
-        className="w-[100px]"
+        className="w-[100px] hover:bg-slate-100"
         disabled={pagination.prev == null}
         onClick={() => handleClick(pagination.prev, -1)}
       >
@@ -22,7 +22,7 @@ function Pagination() {
       </button>
       <div className="">{count}</div>
       <button
-        className="w-[100px]"
+        className="w-[100px] hover:bg-slate-100"
         disabled={pagination.next == null}
         onClick={() => handleClick(pagination.next, 1)}
       >
