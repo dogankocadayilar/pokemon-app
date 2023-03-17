@@ -5,7 +5,7 @@ function Stat({ stat, type = "normal" }) {
     <div className="flex py-2 justify-between space-x-10 ">
       <div className="capitalize">{stat.name}</div>
       <div className="flex space-x-5">
-        <div class="w-[200px] bg-gray-200 rounded-full ">
+        <div className="w-[200px] bg-gray-200 rounded-full ">
           <div
             className=" text-sm font-bold flex items-center justify-center h-[100%] leading-none rounded-full text-slate-100"
             style={{

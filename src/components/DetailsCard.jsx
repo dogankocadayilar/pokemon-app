@@ -1,17 +1,13 @@
-import { useContext } from "react";
-import { selectedContext } from "../App";
 import { COLOR_MAP } from "../Utils/ColorMap";
 import Stat from "./Stat";
 import Type from "./Type";
 
-function DetailsCard() {
-  const { selected } = useContext(selectedContext);
-
+function DetailsCard({ selected }) {
   return (
-    <section className="flex items-center justify-center">
+    <>
       {selected && (
         <div
-          className="space-y-5 shadow-xl rounded-md bg-white p-5"
+          className="space-y-5 h-[700px] min-w-[420px] shadow-xl rounded-md bg-white p-5 mt-[100px] "
           style={{
             boxShadow: `0 0 20px  ${COLOR_MAP.get(selected.type)}`,
           }}
@@ -30,12 +26,12 @@ function DetailsCard() {
           <div className="">
             {selected &&
               selected.stats.map((stat) => (
-                <Stat stat={stat} type={selected.type} />
+                <Stat key={stat.name} stat={stat} type={selected.type} />
               ))}
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 }
 

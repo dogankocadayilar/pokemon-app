@@ -1,19 +1,20 @@
-import { useContext } from "react";
-import { pokemonContext } from "../App";
 import Card from "./Card";
 import Pagination from "./Pagination";
 
-function List({ loading }) {
-  const { pokemons } = useContext(pokemonContext);
+function List({ loading, pokemons }) {
   return (
-    <section className="flex flex-wrap gap-10 p-5 justify-center">
+    <div className="flex flex-wrap gap-5 py-10 justify-center">
       {loading ? (
         <div>Loading...</div>
       ) : (
-        pokemons.map((pokemon) => <Card key={pokemon.id} pokemon={pokemon} />)
+        <>
+          {pokemons.map((pokemon) => (
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))}
+          <Pagination />
+        </>
       )}
-      <Pagination />
-    </section>
+    </div>
   );
 }
 

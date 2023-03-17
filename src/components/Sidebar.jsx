@@ -5,7 +5,7 @@ import { SparklesIcon } from "@heroicons/react/24/outline";
 
 function Sidebar() {
   return (
-    <div className="w-[300px] bg-white shadow-xl p-3 flex flex-col">
+    <div className="min-w-[300px] bg-white h-[100vh] shadow-xl p-3 flex flex-col">
       <h1 className="font-bold text-2xl p-3">Pokemon App</h1>
 
       <Link

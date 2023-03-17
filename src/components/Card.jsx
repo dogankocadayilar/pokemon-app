@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { selectedContext } from "../App";
+import { SelectedContext } from "../pages/Home";
 import { COLOR_MAP } from "../Utils/ColorMap";
 import Type from "./Type";
 
 function Card({ pokemon }) {
-  const { setSelected } = useContext(selectedContext);
+  const setSelected = useContext(SelectedContext);
 
   return (
     <div
