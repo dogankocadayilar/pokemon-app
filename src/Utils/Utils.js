@@ -1,4 +1,4 @@
-export function formatJson(data) {
+export function formatPokeData(data) {
   return {
     experience: data.base_experience,
     height: data.height,

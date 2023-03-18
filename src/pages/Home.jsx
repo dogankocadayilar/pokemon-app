@@ -2,7 +2,7 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import DetailsCard from "../components/DetailsCard";
 import List from "../components/List";
-import { formatJson } from "../Utils/Utils";
+import { formatPokeData } from "../Utils/Utils";
 
 export const PaginationContext = createContext(null);
 export const SelectedContext = createContext(null);
@@ -30,7 +30,7 @@ function Home() {
   async function getPokemonData(data) {
     data.map(async (item) => {
       const res = await axios.get(item.url);
-      setPokemons((prevState) => [...prevState, formatJson(res.data)]);
+      setPokemons((prevState) => [...prevState, formatPokeData(res.data)]);
     });
   }
 
