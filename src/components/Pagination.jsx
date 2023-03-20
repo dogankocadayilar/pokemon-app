@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { PaginationContext } from "../pages/Home";
+import { PaginationContext } from "../context/pagination-context";
 
 function Pagination() {
   const [count, setCount] = useState(1);

@@ -9,11 +9,13 @@ function Stat({ stat, type = "normal" }) {
           <div
             className=" text-sm font-bold flex items-center justify-center h-[100%] leading-none rounded-full text-slate-100"
             style={{
-              width: `${stat.value > 100 ? 100 : stat.value}%`,
+              width: `${
+                stat.value ? (stat.value > 100 ? 100 : stat.value) : 100
+              }%`,
               backgroundColor: COLOR_MAP.get(type),
             }}
           >
-            {stat.value}
+            {stat.value ? stat.value : "?"}
           </div>
         </div>
       </div>

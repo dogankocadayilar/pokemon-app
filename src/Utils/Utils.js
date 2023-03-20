@@ -14,3 +14,21 @@ export function formatPokeData(data) {
     }),
   };
 }
+
+export function formatMoveData(data) {
+  return {
+    id: data.id,
+    name: data.name.replace("-", " "),
+    stats: [
+      { name: "Accuracy", value: data.accuracy },
+      { name: "Power", value: data.power },
+      { name: "Power Points", value: data.pp },
+    ],
+    effect_entries: data.effect_entries,
+    learned_by_pokemon:
+      data.learned_by_pokemon.length > 10
+        ? data.learned_by_pokemon.slice(0, 10)
+        : data.learned_by_pokemon,
+    type: data.type.name,
+  };
+}
