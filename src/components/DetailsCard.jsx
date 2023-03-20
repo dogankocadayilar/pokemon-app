@@ -6,16 +6,17 @@ function DetailsCard({ selected }) {
   return (
     <>
       {selected && (
-        <div className="space-y-10 max-h-[700px] min-w-[420px] rounded-md bg-white p-5 mt-[100px] ">
+        <div className="space-y-10 max-h-[700px] min-w-[420px] rounded-md bg-white p-5 mt-[50px]">
           {selected.hasOwnProperty("image") && (
             <div className="flex items-center justify-center">
               <img
-                src={selected.image}
+                src={selected.official_image}
                 alt="Pokemon Image"
-                className="w-[300px] h-[300px] "
+                className=""
               />
             </div>
           )}
+
           <div className="flex justify-between">
             <h3 className="font-bold capitalize text-xl">{selected.name}</h3>
             <Type type={selected.type} />

@@ -4,6 +4,7 @@ export function formatPokeData(data) {
     height: data.height,
     id: data.id,
     name: data.name,
+    official_image: data.sprites.other["official-artwork"].front_default,
     image: data.sprites.other.dream_world.front_default,
     type: data.types[0].type.name,
     stats: data.stats.map((stat) => {
