@@ -25,11 +25,24 @@ export function formatMoveData(data) {
       { name: "Power", value: data.power },
       { name: "Power Points", value: data.pp },
     ],
-    effect_entries: data.effect_entries,
+    effect: data.effect_entries[0].effect.replace("$effect_chance%", ""),
     learned_by_pokemon:
       data.learned_by_pokemon.length > 10
-        ? data.learned_by_pokemon.slice(0, 10)
+        ? data.learned_by_pokemon.slice(0, 5)
         : data.learned_by_pokemon,
     type: data.type.name,
+  };
+}
+
+export function formatItemData(data) {
+  return {
+    id: data.id,
+    name: data.name.replace("-", " "),
+    stats: [
+      { name: "Cost", value: data.cost },
+      { name: "Fling Power", value: data.fling_power },
+    ],
+    effect: data.effect_entries[0].effect.replace("$effect_chance%", ""),
+    image: data.sprites.default,
   };
 }

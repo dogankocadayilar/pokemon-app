@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Moves from "./pages/Moves";
 import Home from "./pages/Home";
-import Types from "./pages/Types";
+import Items from "./pages/Items";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/types" element={<Types />} />
+        <Route path="/types" element={<Items />} />
         <Route path="/abilities" element={<Moves />} />
       </Routes>
     </main>

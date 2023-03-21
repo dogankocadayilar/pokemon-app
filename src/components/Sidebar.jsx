@@ -25,7 +25,7 @@ function Sidebar() {
         className="w-full p-3 hover:bg-slate-100 flex items-center space-x-5 justify-center lg:justify-start"
       >
         <SparklesIcon className="w-8" />
-        <span className="text-lg font-bold hidden lg:block">Types</span>
+        <span className="text-lg font-bold hidden lg:block">Items</span>
       </Link>
 
       <Link

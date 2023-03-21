@@ -18,7 +18,7 @@ function Card({ data }) {
         >
           {data.name}
         </h2>
-        <Type type={data.type} />
+        {data.type && <Type type={data.type} />}
       </div>
       {data.hasOwnProperty("image") && (
         <img

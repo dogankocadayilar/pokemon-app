@@ -27,16 +27,15 @@ function Moves() {
     });
   }
 
-  console.log(pokemons);
-
   return (
     <section className="grid grid-cols-[2fr_1fr] w-full">
       <PaginationProvider value={{ pagination, setUrl }}>
         <SelectedProvider value={setSelected}>
           <List loading={loading} pokemons={data} />
 
-          <div className="px-10 justify-center shadow-xl overflow-y-auto">
+          <div className="px-10 justify-center shadow-xl max-h-screen">
             <DetailsCard selected={selected} />
+            {selected && <p className="p-5">{selected.effect}</p>}
             <List loading={loading} pokemons={pokemons} isPaginable={false} />
           </div>
         </SelectedProvider>

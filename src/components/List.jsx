@@ -3,7 +3,7 @@ import Pagination from "./Pagination";
 
 function List({ loading, pokemons, isPaginable = true }) {
   return (
-    <div className="flex flex-wrap gap-5 py-10 justify-center">
+    <div className="flex flex-wrap gap-5 py-10 justify-center overflow-y-auto ">
       {loading ? (
         <div>Loading...</div>
       ) : (
